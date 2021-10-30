@@ -9,6 +9,12 @@ a{
     font-family: 'Trebuchet MS',sans-serif;
 }
 
+img{
+    max-height: 500px;
+}
+
+/*Navegador*/
+
 .navegador{    
     display: flex;
     justify-content: space-evenly;
@@ -26,6 +32,7 @@ a{
     transition-duration: 0.3s;
 }
 
+/*Dropdown do  navegador*/
 .dropdown{
     position: relative;
 }
@@ -50,4 +57,32 @@ a{
 
 .dropdown:hover .dropdown-item{
     display: block;
+}
+
+/*Artigo*/
+.artigo{
+    padding: 30px;
+    border-bottom: 1px black solid;
+}
+
+/*Header*/
+.cabecalho{
+    padding: 10px;
+}
+
+/*Textos*/
+.titulo{
+    font-size: 2em;
+    font-family: 'Tahoma',sans-serif;
+}
+
+.sub-titulo{
+    font-size: 1em;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.texto{
+    max-width: 50%;
+    font-family: Georgia, serif;
+    margin-top: 5px;
 }
