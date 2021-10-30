@@ -9,17 +9,33 @@
     background-color: cornflowerblue;
 }
 
-.navegador > .botao-nav{
+.navegador .botao-nav{
     display: block;
+    padding: 20px;
+}
+
+.botao-nav:hover{
+    color: rosybrown;
+    transition-duration: 0.3s;
+}
+
+.dropdown{
+    position: relative;
 }
 
 .dropdown .dropdown-item{
     display: none;
+    position: absolute;
     background-color: aliceblue;
     width: 300px;
-    position: relative;
+    padding: 20px;
+}
+
+.dropdown-item a{
+    display: block;
 }
 
 .dropdown:hover .dropdown-item{
     display: block;
+    transition-duration: 0.3s; 
 }
