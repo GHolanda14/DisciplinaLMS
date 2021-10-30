@@ -3,19 +3,26 @@
     padding: 0px;
 }
 
-.navegador{
+a{
+    text-decoration: none;
+    color: rgb(32, 29, 29);
+    font-family: 'Trebuchet MS',sans-serif;
+}
+
+.navegador{    
     display: flex;
     justify-content: space-evenly;
-    background-color: cornflowerblue;
+    background-color: blue;
 }
 
 .navegador .botao-nav{
     display: block;
     padding: 20px;
+    background-color: cornflowerblue;
 }
 
 .botao-nav:hover{
-    color: rosybrown;
+    color: rgb(35, 211, 79);
     transition-duration: 0.3s;
 }
 
@@ -26,16 +33,21 @@
 .dropdown .dropdown-item{
     display: none;
     position: absolute;
-    background-color: aliceblue;
     width: 300px;
-    padding: 20px;
 }
 
 .dropdown-item a{
     display: block;
+    background-color:  cornflowerblue;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+.dropdown-item a:hover{
+    color: rosybrown;
+    transition-duration: 0.3s;
 }
 
 .dropdown:hover .dropdown-item{
     display: block;
-    transition-duration: 0.3s; 
 }
