@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.navegador{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: cornflowerblue;
+}
+
+.navegador > .botao-nav{
+    display: block;
+}
+
+.dropdown .dropdown-item{
+    display: none;
+    background-color: aliceblue;
+    width: 300px;
+    position: relative;
+}
+
+.dropdown:hover .dropdown-item{
+    display: block;
+}
