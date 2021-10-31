@@ -51,7 +51,7 @@ img{
     text-align: center;
 }
 .dropdown-item a:hover{
-    color: rosybrown;
+    color: rgb(35, 211, 79);
     transition-duration: 0.3s;
 }
 
@@ -62,7 +62,10 @@ img{
 /*Artigo*/
 .artigo{
     padding: 30px;
-    border-bottom: 1px black solid;
+    border-top: 2px black solid;
+}
+.secao{
+    padding: 10px;
 }
 
 /*Header*/
@@ -79,6 +82,7 @@ img{
 .sub-titulo{
     font-size: 1em;
     font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 2px;
 }
 
 .texto{
