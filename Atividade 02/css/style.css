@@ -28,7 +28,7 @@ img{
 }
 
 .botao-nav:hover{
-    color: rgb(35, 211, 79);
+    color: rgb(10, 141, 42);
     transition-duration: 0.3s;
 }
 
@@ -51,7 +51,7 @@ img{
     text-align: center;
 }
 .dropdown-item a:hover{
-    color: rgb(35, 211, 79);
+    color: rgb(10, 141, 42);
     transition-duration: 0.3s;
 }
 
