@@ -38,9 +38,9 @@ img{
 }
 
 .dropdown .dropdown-item{
-    display: none;
     position: absolute;
     width: 300px;
+    opacity: 0;
 }
 
 .dropdown-item a{
@@ -56,7 +56,8 @@ img{
 }
 
 .dropdown:hover .dropdown-item{
-    display: block;
+    transition-duration: 0.5s;
+    opacity: 1;
 }
 
 /*Artigo*/
@@ -95,7 +96,8 @@ img{
 
 /*Menu lateral*/
 .menu-lateral{
-    height: 100%;
+    position: fixed;
+    height: 100vh;
     width: 400px;
     background-color: cornflowerblue;
     font-size: 2em;
@@ -110,10 +112,5 @@ img{
 
 /*Container*/
 .container{
-    display: flex;
-    flex-direction: row;
-}
-
-.container-item{
-    justify-content: flex-start;
+    margin-left: 400px;
 }
