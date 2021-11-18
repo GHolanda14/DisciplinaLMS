@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -64,4 +66,17 @@
     height: 150px;
     width: 150px;
     margin: 40px;
+}
+
+/*Rodapé*/
+.rodape{
+    background-color: rgb(27, 26, 26);  
+    width: 100vw;
+    text-align: center;
+}
+
+.texto-rodape{
+    color: wheat;
+    padding: 10px;
+    font-family: 'M PLUS 1', sans-serif;
 }
