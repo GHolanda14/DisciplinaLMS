@@ -1,0 +1,90 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/*Navegador superior*/
+.navegador-superior{
+    height: 40px;
+    background-color: rgb(20, 165, 76);
+}
+
+/*Media queries*/
+@media screen and (min-width:768px){
+    .container .menu-lateral-esquerdo{
+        width: 350px;
+        height: 800px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .container{
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .container .menu-lateral-esquerdo{
+        height: 400px;
+    }
+    .menu-lateral-esquerdo{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .linha-superior, .linha-inferior{
+        flex-wrap: wrap;
+    }
+}
+
+.container{
+    display: flex;
+}
+
+.container .menu-lateral-esquerdo{
+    background-color: rgb(70, 10, 150);
+}
+
+.container .conteudo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.container .conteudo .linha-superior{
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    width: 100%;
+}
+.container .conteudo .linha-inferior{
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    width: 100%;
+}
+
+/*Deixando a largura completa em ambas as linhas*/
+.linha-superior > *, .linha-inferior > *{
+    width: 100%;
+}
+
+/*Células*/
+.celula{
+    height: 400px;
+}
+.celula1{
+    background-color: rgb(150, 80, 10);
+}
+.celula2{
+    background-color: rgb(17, 0, 255);
+}
+.celula3{
+    background-color: rgb(202, 17, 17);
+}
+.celula4{
+    background-color: rgb(191, 241, 10);
+}
+.celula5{
+    background-color: rgb(10, 241, 229);
+}
+
+
