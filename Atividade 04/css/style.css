@@ -22,6 +22,16 @@
         position:relative;
         z-index: 1;
      }
+     @keyframes passear {
+        0%,100%{
+            left:400px;
+            top: 500px;
+        }
+        50%{
+            left: 1000px;
+            top:500px;
+        }
+     }     
 }
 
 @media screen and (max-width:768px) {
@@ -39,9 +49,23 @@
     }
     .linha-superior, .linha-inferior{
         flex-wrap: wrap;
+    }    
+    @keyframes passear {
+        0%,100%{
+            top: 1300px;
+            left: 200px;
+        }
+        50%{
+            top: 2200px;
+            left: 200px;
+        }
+    }
+    .celula3{
+        margin-top: 400px;
     }
 }
 
+/*Container*/
 .container{
     display: flex;
 }
@@ -87,30 +111,30 @@
 
 }
 
-.texto-celula2{
-    color:white;
+.accordion{
+    width: 100%;
+}
+.accordion .accordion-item .titulo-accordion{
+    height: 40px;
+    text-align: center;
 }
 
-.imagem{
-    height: 100%;
+.corpo-accordion{
+    height: 0px;
+    transition: height 1s;
+    background-color: blueviolet;
 }
-.imagem-roda{
-    position: absolute;
-    animation-name: piao;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    height: 250px;
+.conteudo-accordion{
+    display: none;
 }
 
-.imagem-passeia{
-    position: absolute;
-    animation-name: passear;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+.accordion-item:hover .corpo-accordion{
+    height: 240px;
+    overflow: hidden;
 }
-
+.accordion-item:hover .conteudo-accordion{
+    display: block;
+}
 /*Células*/
 .celula{
     height: 400px;
@@ -123,7 +147,8 @@
     position: relative;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+    color:white;
 }
 .celula3{
     background-color: rgb(202, 17, 17);
@@ -136,34 +161,32 @@
 }
 
 
+
+/*Imagem*/
+.imagem{
+    height: 100%;
+}
+.imagem-roda{
+    position: absolute;
+    animation-name: piao;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    height: 250px;
+}
+.imagem-passeia{
+    position: absolute;
+    animation-name: passear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+/*Animações*/
 @keyframes piao {
     from{
         transform: rotate(0deg);
     }
     to{
         transform: rotate(360deg);
-    }
-}
-
-@keyframes passear {
-    0%{
-        left:400px;
-        top:400px;
-    }
-    25%{
-        left:800px;
-        top:400px;
-    }
-    50%{
-        left:800px;
-        top:500px;
-    }
-    75%{
-        left: 400px;
-        top: 500px;
-    }
-    100%{
-        left: 400px;
-        top: 400px;
     }
 }
