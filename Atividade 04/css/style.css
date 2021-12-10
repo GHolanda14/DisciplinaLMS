@@ -94,6 +94,22 @@
 .imagem{
     height: 100%;
 }
+.imagem-roda{
+    position: absolute;
+    animation-name: piao;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    height: 250px;
+}
+
+.imagem-passeia{
+    position: absolute;
+    animation-name: passear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
 
 /*Células*/
 .celula{
@@ -120,3 +136,34 @@
 }
 
 
+@keyframes piao {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes passear {
+    0%{
+        left:400px;
+        top:400px;
+    }
+    25%{
+        left:800px;
+        top:400px;
+    }
+    50%{
+        left:800px;
+        top:500px;
+    }
+    75%{
+        left: 400px;
+        top: 500px;
+    }
+    100%{
+        left: 400px;
+        top: 400px;
+    }
+}
