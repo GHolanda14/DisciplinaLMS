@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Header*/
+
+.navegador-superior{
+    height: 40px;
+    width: 100vw;
+    background-color: rgb(238, 93, 9);
+    display: flex;
+    justify-content: space-between;
+}
+.navegador-botoes{
+    display: flex;
+    margin-right: 10px; 
+}
+
+/*botoes*/
+.postar{
+    margin-right: 10px;
+}
+
+.logo{
+    height: 100%;
+}
+
+.container{
+    display: flex;
+}
+
+/*Feed*/
+.feed{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 40px;
+}
+.post{
+    background-color: aquamarine;
+    padding: 20px;
+    margin-bottom: 40px;
+    border: 1px solid black;
+}
+
+/*Menu lateral retrátil*/
+.menu-retratil{
+    min-width: 0px;
+    transition: min-width 2s;
+    height: calc(100vh - 40px);
+    background-color: violet;
+}
+/*Modal*/
