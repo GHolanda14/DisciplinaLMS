@@ -8,6 +8,118 @@
     background-color: rgb(20, 165, 76);
 }
 
+/*Container*/
+.container{
+    display: flex;
+}
+
+.container .menu-lateral-esquerdo{
+    background-color: rgb(70, 10, 150);
+}
+
+.container .conteudo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.container .conteudo .linha-superior, .linha-inferior{
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    width: 100%;
+}
+
+/*Deixando a largura completa em ambas as linhas*/
+.linha-superior > *, .linha-inferior > *{
+    width: 100%;
+}
+
+.overlay-inner{
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    height: 60px;
+    display: flex;
+    bottom: 0;
+    justify-content: center; 
+    align-items: center;
+
+}
+
+/* Celula 1 com accordion*/
+.accordion{
+    width: 100%;
+}
+.accordion .accordion-item .titulo-accordion{
+    height: 40px;
+    text-align: center;
+}
+
+.corpo-accordion{
+    height: 0px;
+    transition: height 1s;
+    background-color: blueviolet;
+}
+.conteudo-accordion{
+    display: none;
+}
+
+.accordion-item:hover .corpo-accordion{
+    height: 240px;
+    overflow: hidden;
+}
+.accordion-item:hover .conteudo-accordion{
+    display: block;
+}
+
+/*Células*/
+.celula{
+    height: 400px;
+}
+.celula1{
+    background-color: rgb(150, 80, 10);
+}
+.celula2{
+    background-color: rgb(17, 0, 255);
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;    
+    color:white;
+}
+.celula3{
+    background-color: rgb(202, 17, 17);
+}
+.celula4{
+    background-color: rgb(191, 241, 10);
+}
+.celula5{
+    background-color: rgb(10, 241, 229);
+}
+
+
+
+/*Imagem*/
+.imagem{
+    height: 100%;
+}
+.imagem-roda{
+    position: absolute;
+    animation-name: piao;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    height: 250px;
+}
+.imagem-passeia{
+    position: absolute;
+    animation-name: passear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
 /*Media queries*/
 @media screen and (min-width:768px){
     .container .menu-lateral-esquerdo{
@@ -65,122 +177,6 @@
     }
 }
 
-/*Container*/
-.container{
-    display: flex;
-}
-
-.container .menu-lateral-esquerdo{
-    background-color: rgb(70, 10, 150);
-}
-
-.container .conteudo{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.container .conteudo .linha-superior{
-    display: flex;
-    flex-direction: row;
-    height: 400px;
-    width: 100%;
-}
-.container .conteudo .linha-inferior{
-    display: flex;
-    flex-direction: row;
-    height: 400px;
-    width: 100%;
-}
-
-/*Deixando a largura completa em ambas as linhas*/
-.linha-superior > *, .linha-inferior > *{
-    width: 100%;
-}
-
-.overlay-inner{
-    position: absolute;
-    width: 100%;
-    background-color: rgba(0,0,0,0.8);
-    height: 60px;
-    display: flex;
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.accordion{
-    width: 100%;
-}
-.accordion .accordion-item .titulo-accordion{
-    height: 40px;
-    text-align: center;
-}
-
-.corpo-accordion{
-    height: 0px;
-    transition: height 1s;
-    background-color: blueviolet;
-}
-.conteudo-accordion{
-    display: none;
-}
-
-.accordion-item:hover .corpo-accordion{
-    height: 240px;
-    overflow: hidden;
-}
-.accordion-item:hover .conteudo-accordion{
-    display: block;
-}
-/*Células*/
-.celula{
-    height: 400px;
-}
-.celula1{
-    background-color: rgb(150, 80, 10);
-}
-.celula2{
-    background-color: rgb(17, 0, 255);
-    position: relative;
-    height: 100%;
-    display: flex;
-    justify-content: center;    
-    color:white;
-}
-.celula3{
-    background-color: rgb(202, 17, 17);
-}
-.celula4{
-    background-color: rgb(191, 241, 10);
-}
-.celula5{
-    background-color: rgb(10, 241, 229);
-}
-
-
-
-/*Imagem*/
-.imagem{
-    height: 100%;
-}
-.imagem-roda{
-    position: absolute;
-    animation-name: piao;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    height: 250px;
-}
-.imagem-passeia{
-    position: absolute;
-    animation-name: passear;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
 /*Animações*/
 @keyframes piao {
     from{
