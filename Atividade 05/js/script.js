@@ -4,7 +4,6 @@ function mostrarMenu(){
         menuRetratil.style.minWidth = "400px";
     }
     else{
-        
         menuRetratil.style.minWidth = "0px";
     }   
 }
