@@ -1,9 +1,8 @@
-function mostrarMenu(){
+let menuHamburguer = document.querySelector(".menu-hamburguer");
+
+/*Evento que mostra e esconde o menu retrátil*/
+menuHamburguer.addEventListener("click",function(){
     let menuRetratil = document.querySelector(".menu-retratil");
-    if(menuRetratil.offsetWidth == 0){
-        menuRetratil.style.minWidth = "400px";
-    }
-    else{
-        menuRetratil.style.minWidth = "0px";
-    }   
-}
+    menuRetratil.classList.toggle("menu-retratil-todo");
+});
+
