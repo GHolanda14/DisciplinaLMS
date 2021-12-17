@@ -11,8 +11,7 @@ textarea{
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&family=Source+Sans+Pro&display=swap');
 
-/*Header*/
-
+/*Navegador superior*/
 .navegador-superior{
     height: 40px;
     width: 100%;
@@ -20,13 +19,12 @@ textarea{
     display: flex;
     justify-content: space-between;
 }
-.navegador-botoes{
-    display: flex;
-    margin-right: 20px;
+.navegador-superior .navegador-botoes{
+    display: flex;    
     justify-content: space-between;
 }
 
-.navegador-botoes > *{
+.navegador-superior .navegador-botoes > *{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5em;
 }
@@ -37,37 +35,38 @@ textarea{
     border: none;
 }
 
-.postar{
+.navegador-superior .navegador-botoes .postar{
     padding: 0px 20px;
     border-left: 2px solid rgba(0,0,0,0.4);
 }
 
-.menu-hamburguer{
-    padding-left: 20px;
+.navegador-superior .navegador-botoes .menu-hamburguer{
+    padding: 0px 20px;
     border-left: 2px solid rgba(0,0,0,0.4);
 }
 
-.logo{
+.navegador-superior .logo{
     height: 100%;
     margin-left: 20px;
     border-right: 2px solid rgba(0,0,0,0.4);
     padding-right: 10px;
 }
 
+/*Container*/
 .container{
     display: flex;
     min-height: calc(100vh - 40px);
 }
 
 /*Feed*/
-.feed{
+.container .feed{
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 40px;
 }
 
-.post{
+.container .feed .post{
     background-color: aquamarine;
     padding: 20px;
     margin-bottom: 40px;
@@ -75,15 +74,15 @@ textarea{
 }
 
 /*Menu lateral retrátil*/
-.menu-retratil{
+.container .menu-retratil{
     min-width: 0px;
-    transition: min-width 2s;
+    transition: min-width 1s;
     background-color: violet;
     min-height: calc(100% - 40px);
     
 }
 /*Substituir por active*/
-.menu-retratil-todo{
+.container .menu-retratil.active{
     min-width: 400px;
 }
 
@@ -162,12 +161,12 @@ textarea{
     font-size: larger;
 }
 
-.form-nome, .form-mensagem{
+.overlay-modal .modal-container .modal-content .formulario .form-nome, .form-mensagem{
     display: flex;
     flex-direction: column;
 }
 
-.form-texto{
+.overlay-modal .modal-container .modal-content .formulario .form-texto{
     font-family: 'Source Sans Pro', sans-serif;
     margin-left: 1px;
 }

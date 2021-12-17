@@ -10,7 +10,7 @@ formulario.addEventListener("submit",(event)=>{
 let menuHamburguer = document.querySelector(".menu-hamburguer");
 menuHamburguer.addEventListener("click",function(){
     let menuRetratil = document.querySelector(".menu-retratil");
-    menuRetratil.classList.toggle("menu-retratil-todo");
+    menuRetratil.classList.toggle("active");
 });
 
 /*Abrindo o modal*/
