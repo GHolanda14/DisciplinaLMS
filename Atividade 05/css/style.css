@@ -8,6 +8,7 @@ button{
 textarea{
     resize: none;   
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&family=Source+Sans+Pro&display=swap');
 
 /*Header*/
@@ -21,17 +22,36 @@ textarea{
 }
 .navegador-botoes{
     display: flex;
-    margin-right: 10px; 
+    margin-right: 20px;
+    justify-content: space-between;
+}
+
+.navegador-botoes > *{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5em;
 }
 
 /*botoes*/
+.clearBotoes{
+    background: none;
+    border: none;
+}
+
 .postar{
-    margin-right: 10px;
+    padding: 0px 20px;
+    border-left: 2px solid rgba(0,0,0,0.4);
+}
+
+.menu-hamburguer{
+    padding-left: 20px;
+    border-left: 2px solid rgba(0,0,0,0.4);
 }
 
 .logo{
     height: 100%;
     margin-left: 20px;
+    border-right: 2px solid rgba(0,0,0,0.4);
+    padding-right: 10px;
 }
 
 .container{
@@ -104,9 +124,7 @@ textarea{
 }
 
 .overlay-modal .modal-container .modal-header .fechar-modal{
-    font-size: large;
-    background: none;
-    border: 0px;
+    font-size: large;    
     color: rgba(0,0,0,0.4);
 }
 
