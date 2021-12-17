@@ -8,16 +8,13 @@ button{
 textarea{
     resize: none;   
 }
-body{
-    overflow: hidden;    
-}
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&family=Source+Sans+Pro&display=swap');
 
 /*Header*/
 
 .navegador-superior{
     height: 40px;
-    width: 100vw;
+    width: 100%;
     background-color: rgb(238, 93, 9);
     display: flex;
     justify-content: space-between;
@@ -39,7 +36,6 @@ body{
 
 .container{
     display: flex;
-    max-height: 800px;
 }
 
 /*Feed*/
@@ -48,9 +44,6 @@ body{
     flex-direction: column;
     width: 100%;
     padding: 40px;
-    max-height: 650px;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
 }
 
 .post{
@@ -64,8 +57,9 @@ body{
 .menu-retratil{
     min-width: 0px;
     transition: min-width 2s;
-    height: calc(100vh - 40px);
     background-color: violet;
+    min-height: calc(100% - 40px);
+    
 }
 /*Substituir por active*/
 .menu-retratil-todo{
