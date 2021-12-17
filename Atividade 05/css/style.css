@@ -2,6 +2,16 @@
     margin: 0;
     padding: 0;
 }
+button{
+    cursor: pointer;
+}
+textarea{
+    resize: none;   
+}
+body{
+    overflow: hidden;    
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&family=Source+Sans+Pro&display=swap');
 
 /*Header*/
 
@@ -29,6 +39,7 @@
 
 .container{
     display: flex;
+    max-height: 800px;
 }
 
 /*Feed*/
@@ -37,7 +48,11 @@
     flex-direction: column;
     width: 100%;
     padding: 40px;
+    max-height: 650px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
+
 .post{
     background-color: aquamarine;
     padding: 20px;
@@ -52,26 +67,94 @@
     height: calc(100vh - 40px);
     background-color: violet;
 }
-
+/*Substituir por active*/
 .menu-retratil-todo{
     min-width: 400px;
 }
 
 /*Modal*/
-.overlay{
+.overlay-modal{
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    
     display: none;
-    background-color: rgba(0,0,0,0.8);
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    
-    
     justify-content: center;
     align-items: center;
 }
-.modal{
+
+.overlay-modal.active{
+    display: flex;
+}
+
+.overlay-modal .modal-container{
     height: 300px;
     width: 500px;
     background-color: wheat;
     border-radius: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.overlay-modal .modal-container .modal-header{
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 10px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overlay-modal .modal-container .modal-header .fechar-modal{
+    font-size: large;
+    background: none;
+    border: 0px;
+    color: rgba(0,0,0,0.4);
+}
+
+.overlay-modal .modal-container .modal-content{
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    flex-grow: 2;
+}
+
+.overlay-modal .modal-container .modal-footer{
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px;
+    flex-direction: row-reverse;
+}
+
+.overlay-modal .modal-container .modal-footer button{
+    padding: 5px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+/*Formulario*/
+.overlay-modal .modal-container .modal-content .formulario{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    padding: 10px 20px;
+
+    justify-content: space-around;
+}
+
+.overlay-modal .modal-container .modal-content .formulario .form-label{
+    font-family: 'Noto Sans Display', sans-serif;
+    font-size: larger;
+}
+
+.form-nome, .form-mensagem{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-texto{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-left: 1px;
 }

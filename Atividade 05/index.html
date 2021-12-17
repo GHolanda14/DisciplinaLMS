@@ -8,22 +8,30 @@
     <title>Atividade 05</title>
 </head>
 <body>
-    <div class="overlay">
-        <div class="modal">
-            <form action="" method="post" class="formulario">
-                <div class="form-cabecalho">
-                    
-                </div>
-                <div class="form-conteudo">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="" id="nome">
-                    <label for="mensagem">Mensagem:</label>
-                    <input type="text" name="" id="mensagem">
-                </div>
-                <div class="form-rodape">
-                    <button type="submit">Enviar</button>
-                </div>
-            </form>
+    <div class="overlay-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="titulo-modal">Insira sua mensagem</h2>
+                <button class="fechar-modal">X</button>
+            </div>
+            
+            <div class="modal-content">
+                <form onsubmit="novoPost()" method="post" id="formulario" class="formulario">
+                    <div class="form-nome">
+                        <label class="form-label" for="nome">Nome:</label>
+                        <input type="text" class="form-texto" id="nome" required>
+                    </div>
+                    <div class="form-mensagem">
+                        <label class="form-label" for="mensagem">Mensagem:</label>
+                        <textarea class="form-texto" id="mensagem" cols="20" rows="5" required></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" form="formulario" class="btn-enviar"">Enviar</button>
+                <button class="btn-cancelar"">Cancelar</button>
+            </div>
         </div>
     </div>
     <header>
