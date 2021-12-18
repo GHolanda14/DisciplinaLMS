@@ -9,7 +9,7 @@ textarea{
     resize: none;   
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Mea+Culpa&family=Noto+Sans+Display:wght@300&family=Source+Sans+Pro&display=swap');
 
 /*Navegador superior*/
 .navegador-superior{
@@ -71,8 +71,16 @@ textarea{
     padding: 20px;
     margin-bottom: 40px;
     border: 1px solid black;
+    font-family: 'Imperial Script', cursive;
 }
 
+.container .feed .post.destaque{
+    background-color: brown;
+}
+
+.container .feed .post .mensagem{
+    font-family: 'Imperial Script', cursive;
+}
 /*Menu lateral retrátil*/
 .container .menu-retratil{
     min-width: 0px;

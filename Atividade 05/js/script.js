@@ -1,5 +1,6 @@
 let overlayModal = document.querySelector(".overlay-modal");
 let formulario = document.querySelector(".formulario");
+let id = 3;//Já começa com o id até o 3
 
 /*Impedindo que o formulário atualize a página*/
 formulario.addEventListener("submit",(event)=>{
@@ -41,16 +42,35 @@ window.addEventListener("click",function(event){
 
 /*Adicionando posts*/
 function novoPost(){
+    id++;
     let feed = document.querySelector(".feed");
     let nome = document.querySelector("#nome").value;
     let mensagem = document.querySelector("#mensagem").value;
 
-    feed.innerHTML+= `  <div class="post">
+    feed.innerHTML+= `  <div class="post" id="${id}">
                 <h2 class="nome-autor">${nome}</h2>
                 <p class="mensagem">${mensagem}</p>
              </div>
     `;
-    
     overlayModal.classList.remove("active");
     formulario.reset();
 }
+
+/*Alterando o texto em destaque*/
+let cont = 1;
+function mudarDestaque(){
+    let destaque = document.querySelector(".destaque");
+    let post = document.getElementById(cont);
+
+    destaque.children[0].innerText = post.children[0].textContent;//Nome
+    destaque.children[1].innerText = post.children[1].textContent;//Mensagem
+    
+    /*Garantindo que não pegue id's inexistentes*/
+    if(cont < id){
+        cont++;
+    }else{
+        cont = 1;
+    }
+}
+mudarDestaque();//Iniciando a página logo com o primeiro post destacado
+setInterval(mudarDestaque,2000);
