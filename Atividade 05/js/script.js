@@ -73,4 +73,4 @@ function mudarDestaque(){
     }
 }
 mudarDestaque();//Iniciando a página logo com o primeiro post destacado
-setInterval(mudarDestaque,2000);
+setInterval(mudarDestaque,2000);//Mudando destaque a cada 2s

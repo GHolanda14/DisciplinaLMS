@@ -96,7 +96,7 @@ textarea{
 
 /*Modal*/
 .overlay-modal{
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.6);
     position: fixed;
     height: 100%;
     width: 100%;
@@ -108,6 +108,8 @@ textarea{
 
 .overlay-modal.active{
     display: flex;
+    animation-name: aparecer;
+    animation-duration: 500ms;
 }
 
 .overlay-modal .modal-container{
@@ -119,6 +121,8 @@ textarea{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    animation-name: cair;
+    animation-duration: 500ms;
 }
 
 .overlay-modal .modal-container .modal-header{
@@ -177,4 +181,22 @@ textarea{
 .overlay-modal .modal-container .modal-content .formulario .form-texto{
     font-family: 'Source Sans Pro', sans-serif;
     margin-left: 1px;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes cair{
+    from{
+        transform: translate(0px,-300px);
+    }
+    to{
+        transform: translate(0px,0px);
+    }
 }
