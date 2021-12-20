@@ -20,23 +20,50 @@ botaoPostar.addEventListener("click",function(){
     overlayModal.classList.add("active");
 });
 
+/*Função para desaparecer o modal*/
+let desapareceModal = function(){
+    overlayModal.animate([
+        {opacity: 1},
+        {opacity: 0}
+    ],
+    {
+        duration: 400
+    });    
+    setTimeout(function(){
+        overlayModal.classList.remove("active");
+    },300);
+    formulario.reset();
+}
+
+/*Função para subir o modal-container*/
+let subirContainer = function(){
+    let modalContainer = document.querySelector(".modal-container");
+    modalContainer.animate([
+        {transform: 'translate(0px,0px)'},
+        {transform: 'translate(0px,-300px'}
+    ],
+    {
+        duration: 400
+    });
+}
+
 /*Fechando o modal*/
 let fecharModal = document.querySelector(".fechar-modal");
 fecharModal.addEventListener("click",function(){
-    overlayModal.classList.remove("active");
-    formulario.reset();
+    desapareceModal();
+    subirContainer();
 });
 
 let btnCancelar = document.querySelector(".btn-cancelar");
 btnCancelar.addEventListener("click",function(){
-    overlayModal.classList.remove("active");
-    formulario.reset();
+    desapareceModal();
+    subirContainer();
 });
 
 window.addEventListener("click",function(event){
     if(event.target == overlayModal){
-        overlayModal.classList.remove("active");
-        formulario.reset();
+        desapareceModal();
+        subirContainer();
     }
 });
 
@@ -52,8 +79,8 @@ function novoPost(){
                 <p class="mensagem">${mensagem}</p>
              </div>
     `;
-    overlayModal.classList.remove("active");
-    formulario.reset();
+    desapareceModal();
+    subirContainer();
 }
 
 /*Alterando o texto em destaque*/

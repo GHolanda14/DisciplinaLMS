@@ -6,7 +6,12 @@ button{
     cursor: pointer;
 }
 textarea{
-    resize: none;   
+    resize: none;
+}
+
+.clearBotoes{
+    background: none;
+    border: none;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Mea+Culpa&family=Noto+Sans+Display:wght@300&family=Source+Sans+Pro&display=swap');
@@ -29,12 +34,7 @@ textarea{
     font-size: 1.5em;
 }
 
-/*botoes*/
-.clearBotoes{
-    background: none;
-    border: none;
-}
-
+/*Botões navegador superior*/
 .navegador-superior .navegador-botoes .postar{
     padding: 0px 20px;
     border-left: 2px solid rgba(0,0,0,0.4);
@@ -67,7 +67,7 @@ textarea{
 }
 
 .container .feed .post{
-    background-color: aquamarine;
+    background-color: rgba(35, 35, 126, 0.8);
     padding: 20px;
     margin-bottom: 40px;
     border: 1px solid black;
@@ -75,7 +75,7 @@ textarea{
 }
 
 .container .feed .post.destaque{
-    background-color: brown;
+    background-color: rgba(218, 14, 14, 0.89);
 }
 
 .container .feed .post .mensagem{
@@ -94,7 +94,7 @@ textarea{
     min-width: 400px;
 }
 
-/*Modal*/
+/*Overlay*/
 .overlay-modal{
     background-color: rgba(0,0,0,0.6);
     position: fixed;
@@ -112,10 +112,11 @@ textarea{
     animation-duration: 500ms;
 }
 
+/*Modal*/
 .overlay-modal .modal-container{
     height: 300px;
     width: 500px;
-    background-color: wheat;
+    background-color: rgb(234, 237, 238);
     border-radius: 10px;
     
     display: flex;
@@ -128,15 +129,11 @@ textarea{
 .overlay-modal .modal-container .modal-header{
     border-bottom: 1px solid rgba(0,0,0,0.2);
     padding: 10px 20px;
+    font-family: cursive;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.overlay-modal .modal-container .modal-header .fechar-modal{
-    font-size: large;    
-    color: rgba(0,0,0,0.4);
 }
 
 .overlay-modal .modal-container .modal-content{
@@ -152,10 +149,27 @@ textarea{
     flex-direction: row-reverse;
 }
 
+/*Botões modal*/
 .overlay-modal .modal-container .modal-footer button{
     padding: 5px;
     border-radius: 4px;
     margin-left: 5px;
+    border: 1px solid transparent;
+    font-family: cursive;
+    color: rgb(241, 235, 235);
+}
+
+.overlay-modal .modal-container .modal-footer .btn-enviar{
+    background-color: rgba(2, 17, 233, 0.8);
+}
+
+.overlay-modal .modal-container .modal-footer .btn-cancelar{
+    background-color: rgba(41, 37, 37, 0.795);
+}
+
+.overlay-modal .modal-container .modal-header .fechar-modal{
+    font-size: large;    
+    color: rgba(0,0,0,0.4);
 }
 
 /*Formulario*/
@@ -165,7 +179,7 @@ textarea{
     width: 100%;
     padding: 10px 20px;
 
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .overlay-modal .modal-container .modal-content .formulario .form-label{
@@ -181,8 +195,10 @@ textarea{
 .overlay-modal .modal-container .modal-content .formulario .form-texto{
     font-family: 'Source Sans Pro', sans-serif;
     margin-left: 1px;
+    padding: 10px;
 }
 
+/*Animações*/
 @keyframes aparecer{
     from{
         opacity: 0;
