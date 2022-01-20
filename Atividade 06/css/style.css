@@ -1,24 +1,35 @@
+/* Elementos
+-----------------------*/
 textarea{
     resize: none !important;
 }
 img{
-    max-height: 30px;
+    max-height: 50px;
 }
-.layout{
+
+/* Classes
+--------------------------*/
+.d-flex .layout{
     width: 900px;
     display: flex;
     flex-direction: column;
     height: 100%;
 }
-.painel{
+.d-flex .painel{
     flex: 1 1 auto;
 }
 
-.flex-grow-5{
+.d-flex .flex-grow-5{
     flex: 5 0 300px;
 }
 
-.flex-grow-grupo{
+.d-flex .flex-grow-grupo{
     flex: 1 1 200px;
     overflow-x: clip;
+}
+
+/* Id's
+--------------------*/
+#logo{
+    max-height: 30px;
 }

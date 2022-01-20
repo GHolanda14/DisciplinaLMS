@@ -6,14 +6,7 @@ window.onload = () => {
     myModal.show();
 }
 
-let formLogin = document.querySelector("#form-login");
-
-formLogin.addEventListener('onsubmit', (event) => {
-    event.preventDefault();
-});
-
 let login = document.querySelector("#login");
-
 login.addEventListener('click',()=>{
     let nomeUsuario = document.getElementById("login-usuario").value;
     if(nomeUsuario != ""){
