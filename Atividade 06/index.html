@@ -24,10 +24,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="form-login" onsubmit="return false" action="">
-                        <label for="login-usuario">Nome:</label>
-                        <input type="text" name="" id="login-usuario" class="form-control" required>
-                    </form>
+                    <form class="form-floating" onsubmit="return false" action="" id="form-login">
+                        <input type="text" class="form-control" placeholder="Nome" id="login-usuario">
+                        <label for="login-usuario">Nome</label>
+                      </form>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" form="form-login" id="login" class="btn btn-success" >Entrar</button>
