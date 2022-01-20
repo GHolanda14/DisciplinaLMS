@@ -1,0 +1,10 @@
+textarea{
+    resize: none !important;
+}
+
+.layout{
+    width: 900px;
+}
+.painel{
+    min-height: 85vh;
+}
