@@ -13,13 +13,35 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="meuModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="meuModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="meuModalLabel">Seja bem-vindo(a)!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-login" onsubmit="return false" action="">
+                        <label for="login-usuario">Nome:</label>
+                        <input type="text" name="" id="login-usuario" class="form-control" required>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form="form-login" id="login" class="btn btn-success" >Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="d-flex justify-content-center">
         <div class="layout">
             <header class="d-flex justify-content-between bg-primary">
                 <div class="p-2 px-5 border-end border-dark border-2">
                     Whistle
                 </div>
-                <div class="p-2 px-5 border-start border-dark border-2">
+                <div id="usuario" class="p-2 px-5 border-start border-dark border-2">
                     Usuario
                 </div>
             </header>
@@ -51,9 +73,11 @@
             </div>
         </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
+        <script src="js/script.js"></script>
 </body>
 
 </html>
