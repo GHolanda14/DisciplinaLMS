@@ -1,10 +1,12 @@
 textarea{
     resize: none !important;
 }
-
+img{
+    max-height: 30px;
+}
 .layout{
     width: 900px;
 }
 .painel{
-    min-height: 85vh;
+    min-height: 84vh;
 }
