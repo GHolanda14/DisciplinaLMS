@@ -13,3 +13,12 @@ img{
 .painel{
     flex: 1 1 auto;
 }
+
+.flex-grow-5{
+    flex: 5 0 300px;
+}
+
+.flex-grow-grupo{
+    flex: 1 1 200px;
+    overflow-x: clip;
+}
