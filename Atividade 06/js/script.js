@@ -28,7 +28,7 @@ function montarGrupo(grupo){
     let span = document.createElement("span");
 
     div.classList.add("d-flex","justify-content-between","py-2","ps-2", "align-items-center");
-    img.classList.add("bg-opacity-50","bg-dark","rounded-circle","p-1");
+    img.classList.add("bg-opacity-50","bg-light","rounded-circle","p-1");
     divInterna.classList.add("text-truncate","border-bottom","border-dark","p-3","w-100");
     span.classList.add("fs-4","fc-light");
 
@@ -52,7 +52,7 @@ function montarMensagem(mensagem){
     let nome = document.createElement("span");
     let corpo = document.createElement("pre");
 
-    div.classList.add("mensagem","my-1","px-2","rounded-3","bg-secondary");
+    div.classList.add("mensagem","my-1","px-2","rounded-3");
     nome.classList.add("m-1","h4");
     corpo.classList.add("text-wrap","ms-3","fc-light");
 

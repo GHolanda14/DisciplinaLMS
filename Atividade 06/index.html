@@ -38,18 +38,18 @@
 
     <div class="d-flex justify-content-center">
         <div class="layout min-vh-100">
-            <header class="d-flex justify-content-between fw-bold bg-primary">
-                <div class="d-flex p-2 px-5 border-end border-dark border-2">
+            <header class="d-flex justify-content-around fw-bold bg-light-gray text-primary">
+                <div class="d-flex flex-base justify-content-center p-2 border-end border-dark border-3">
                     <span class="fs-5 pe-1">Whistle</span>
                     <img id="logo" src="img/whistle.png" alt="">
                 </div>
-                <div class="p-2 px-3 border-start border-dark text-center border-2">
+                <div class="flex-grow-5 p-2 px-3 text-end">
                     <span id="usuario" class="fs-5">Usuário</span>
                 </div>
             </header>
 
             <div class="painel d-flex bg-gray">
-                <div class="flex-grow-grupo overflow-auto border-right border-color">
+                <div class="flex-base overflow-auto border-right border-color">
                     <div id="lista-grupos" class="max-height">
                        
                     </div>
@@ -62,17 +62,17 @@
                 </div>
             </div>
 
-            <div class="d-flex bg-gray">
-                <div class="flex-grow-grupo border-color border-right border-up">
+            <div class="d-flex bg-light-gray">
+                <div class="flex-base">
                     <form id="form-msg" class="d-flex align-items-center p-2">
-                        <input type="text" class="form-control rounded-pill" maxlength="21" placeholder="Novo grupo...">
+                        <input type="text" class="form-control rounded-pill bg-border-gray fc-light" maxlength="14" placeholder="Novo grupo...">
 
                         <button type="submit" class="btn btn-primary btn-sm ms-1">Criar</button>
                     </form>
                 </div>
                 <div class="flex-grow-5">
                     <form id="form-msg" class="d-flex align-items-center p-2">
-                        <textarea rows="1" class="form-control rounded-pill" placeholder="Nova mensagem..."></textarea>
+                        <textarea rows="1" class="form-control rounded-pill bg-border-gray fc-light" placeholder="Nova mensagem..."></textarea>
 
                         <button type="submit" class="btn btn-primary btn-sm ms-1">Enviar</button>
                     </form>
