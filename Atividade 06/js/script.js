@@ -9,6 +9,8 @@ window.onload = () => {
 let listaGrupos = document.querySelector("#lista-grupos");
 let login = document.querySelector("#login");
 let chat = document.querySelector("#chat");
+let formGrupo = document.querySelector("#form-grupo");
+let nomeGrupo = document.querySelector("#form-grupo .form-control");
 
 /*Login escondendo modal*/
 login.addEventListener('click',()=>{
@@ -64,6 +66,13 @@ function montarMensagem(mensagem){
     chat.appendChild(div);
 }
 
+/*Adicionando novo grupo*/
+formGrupo.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    criarGrupo();
+    nomeGrupo.value = "";
+})
+
 /* Requisições
 ---------------------------*/
 
@@ -73,6 +82,7 @@ function carregarGrupos(){
         method: 'GET',
         url: 'https://server-json-lms.herokuapp.com/grupos'
     }).then((response) => {
+        listaGrupos.innerHTML = "";
         for(grupo of response.data){
             montarGrupo(grupo);
         }
@@ -92,6 +102,21 @@ function carregarMensagens(idGrupo){
             montarMensagem(mensagem);
         } 
     }).catch((error) => {
+        console.log(error);
+    })
+}
+
+/*POST Grupo*/
+function criarGrupo(){
+    axios({
+        method: 'POST',
+        url: 'https://server-json-lms.herokuapp.com/grupos',
+        data: {
+            "nome": nomeGrupo.value
+        }
+    }).then((response)=>{
+        carregarGrupos();
+    }).catch((error)=>{
         console.log(error);
     })
 }
