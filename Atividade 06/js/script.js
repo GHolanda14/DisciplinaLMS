@@ -10,12 +10,16 @@ let listaGrupos = document.querySelector("#lista-grupos");
 let login = document.querySelector("#login");
 let chat = document.querySelector("#chat");
 let formGrupo = document.querySelector("#form-grupo");
+let formMsg = document.querySelector("#form-msg");
 let nomeGrupo = document.querySelector("#form-grupo .form-control");
+let mensagem = document.querySelector("#form-msg .form-control");
+let idGrupoAtual = 0;
+let nomeUsuario = "";
 
 /*Login escondendo modal*/
 login.addEventListener('click',()=>{
-    let nomeUsuario = document.getElementById("login-usuario").value;
-    if(nomeUsuario != ""){
+    nomeUsuario = document.querySelector("#login-usuario").value;
+    if(usuario != ""){
         let usuario = document.getElementById("usuario");
         usuario.innerText = nomeUsuario;
         myModal.hide();
@@ -40,6 +44,7 @@ function montarGrupo(grupo){
 
     div.addEventListener('click', ()=>{
         carregarMensagens(div.id);
+        idGrupoAtual = div.id;
     })
 
     divInterna.appendChild(span);
@@ -71,7 +76,13 @@ formGrupo.addEventListener('submit',(event)=>{
     event.preventDefault();
     criarGrupo();
     nomeGrupo.value = "";
-})
+});
+
+formMsg.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    console.log(event);
+});
+
 
 /* Requisições
 ---------------------------*/
@@ -92,10 +103,10 @@ function carregarGrupos(){
 }
 
 /*GET Mensagens*/
-function carregarMensagens(idGrupo){
+function carregarMensagens(idGrupoAtual){
     axios({
         method: "GET",
-        url: `https://server-json-lms.herokuapp.com/grupos/${idGrupo}/mensagens`
+        url: `https://server-json-lms.herokuapp.com/grupos/${idGrupoAtual}/mensagens`
     }).then((response) => {
         chat.innerHTML = "";
         for(mensagem of response.data){
@@ -119,4 +130,22 @@ function criarGrupo(){
     }).catch((error)=>{
         console.log(error);
     })
+}
+
+/*POST Mensagem*/
+function enviarMensagem(idGrupoAtual){
+    let mensagem = document.querySelector("");
+    axios({
+        method: 'POST',
+        url: `https://server-json-lms.herokuapp.com/grupos/${idGrupoAtual}/mensagens`,
+        data: {
+            "nome": nomeUsuario,
+            "corpo": mensagem.value,
+            "grupoId": idGrupoAtual
+        }
+    }).then((response)=>{
+        carregarMensagens(idGrupoAtual);
+    }).catch((error)=>{
+        console.log(error);
+    });
 }
