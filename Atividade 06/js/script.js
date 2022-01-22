@@ -1,25 +1,26 @@
-/* Ao carregar a página, o modal será mostrado */
+/*Variáveis
+---------------------------*/
+let listaGrupos = document.querySelector("#lista-grupos");
+let btnLogin = document.querySelector("#btn-login");
+let chat = document.querySelector("#chat");
+let formGrupo = document.querySelector("#form-grupo");
+let formMsg = document.querySelector("#form-msg");
+let novoGrupo = document.querySelector("#form-grupo .form-control");
+let novaMensagem = document.querySelector("#form-msg .form-control");
+let nomeUsuario;
 let myModal = new bootstrap.Modal(document.getElementById('meuModal'), {
     keyboard: false
   })
+
+/* Ao carregar a página, o modal será mostrado */
 window.onload = () => {
     myModal.show();
     carregarGrupos();
     formMsg.classList.add("d-none");
 }
 
-let listaGrupos = document.querySelector("#lista-grupos");
-let login = document.querySelector("#login");
-let chat = document.querySelector("#chat");
-let formGrupo = document.querySelector("#form-grupo");
-let formMsg = document.querySelector("#form-msg");
-let nomeGrupo = document.querySelector("#form-grupo .form-control");
-let novaMensagem = document.querySelector("#form-msg .form-control");
-let idGrupoAtual = 0;
-let nomeUsuario = "";
-
 /*Login escondendo modal*/
-login.addEventListener('click',()=>{
+btnLogin.addEventListener('click',()=>{
     nomeUsuario = document.querySelector("#login-usuario").value;
     if(usuario != ""){
         let usuario = document.getElementById("usuario");
@@ -27,6 +28,13 @@ login.addEventListener('click',()=>{
         myModal.hide();
     }
 })
+
+/*Removendo actives na lista de grupos*/
+function limparActive(){
+    for(grupo of listaGrupos.childNodes){
+        grupo.classList.remove("active");
+    }
+}
 
 /*Montando grupo a partir do get*/
 function montarGrupo(grupo){
@@ -45,8 +53,9 @@ function montarGrupo(grupo){
     img.src = "img/friends.png";    
 
     div.addEventListener('click', ()=>{
+        limparActive();
         carregarMensagens(div.id);
-        idGrupoAtual = div.id;
+        div.classList.add("active");
         formMsg.classList.remove("d-none");
     })
 
@@ -80,10 +89,12 @@ function montarMensagem(mensagem){
 formGrupo.addEventListener('submit',(event)=>{
     event.preventDefault();
     criarGrupo();
-    nomeGrupo.value = "";
+    novoGrupo.value = "";
 });
 
+/*Adicionando nova mensagem*/
 formMsg.addEventListener('submit',(event)=>{
+    let idGrupoAtual = document.querySelector("#lista-grupos .active").id;
     event.preventDefault();
     enviarMensagem(idGrupoAtual);
     novaMensagem.value = "";
@@ -129,7 +140,7 @@ function criarGrupo(){
         method: 'POST',
         url: 'https://server-json-lms.herokuapp.com/grupos',
         data: {
-            "nome": nomeGrupo.value
+            "nome": novoGrupo.value
         }
     }).then((response)=>{
         carregarGrupos();
