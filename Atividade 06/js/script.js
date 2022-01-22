@@ -36,7 +36,7 @@ function montarGrupo(grupo){
     div.classList.add("d-flex","justify-content-between","py-2","ps-2", "align-items-center");
     img.classList.add("bg-opacity-50","bg-light","rounded-circle","p-1");
     divInterna.classList.add("text-truncate","border-bottom","border-dark","p-3","w-100");
-    span.classList.add("fs-4","fc-light");
+    span.classList.add("fs-4","text-light");
 
     div.id = grupo.id;
     span.innerText = grupo.nome;
@@ -59,9 +59,11 @@ function montarMensagem(mensagem){
     let nome = document.createElement("span");
     let corpo = document.createElement("pre");
 
+    
     div.classList.add("mensagem","my-1","px-2","rounded-3");
     nome.classList.add("m-1","h4");
-    corpo.classList.add("text-wrap","ms-3","fc-light");
+    corpo.classList.add("text-wrap","ms-3","text-light");
+    if(nomeUsuario === mensagem.nome) div.classList.add("align-self-end", "bg-success","text-info");
 
     nome.innerText = mensagem.nome;
     corpo.innerText = mensagem.corpo;

@@ -20,7 +20,7 @@ img{
 }
 
 .d-flex .painel .max-height{
-    max-height: 82vh;
+    max-height: 50vh;
 }
 
 .d-flex .flex-grow-5{
@@ -51,9 +51,6 @@ img{
 }
 .border-right{
     border-right: 1px solid;
-}
-.fc-light{
-    color: aliceblue !important;;
 }
 .bg-img{
     background-image: url("../img/bg-img.png");
