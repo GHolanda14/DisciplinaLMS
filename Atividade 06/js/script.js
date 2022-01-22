@@ -12,7 +12,7 @@ let chat = document.querySelector("#chat");
 let formGrupo = document.querySelector("#form-grupo");
 let formMsg = document.querySelector("#form-msg");
 let nomeGrupo = document.querySelector("#form-grupo .form-control");
-let mensagem = document.querySelector("#form-msg .form-control");
+let novaMensagem = document.querySelector("#form-msg .form-control");
 let idGrupoAtual = 0;
 let nomeUsuario = "";
 
@@ -80,7 +80,8 @@ formGrupo.addEventListener('submit',(event)=>{
 
 formMsg.addEventListener('submit',(event)=>{
     event.preventDefault();
-    console.log(event);
+    enviarMensagem(idGrupoAtual);
+    novaMensagem.value = "";
 });
 
 
@@ -134,13 +135,12 @@ function criarGrupo(){
 
 /*POST Mensagem*/
 function enviarMensagem(idGrupoAtual){
-    let mensagem = document.querySelector("");
     axios({
         method: 'POST',
         url: `https://server-json-lms.herokuapp.com/grupos/${idGrupoAtual}/mensagens`,
         data: {
             "nome": nomeUsuario,
-            "corpo": mensagem.value,
+            "corpo": novaMensagem.value,
             "grupoId": idGrupoAtual
         }
     }).then((response)=>{
