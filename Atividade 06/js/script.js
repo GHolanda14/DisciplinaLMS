@@ -5,7 +5,9 @@ let myModal = new bootstrap.Modal(document.getElementById('meuModal'), {
 window.onload = () => {
     myModal.show();
     carregarGrupos();
+    formMsg.classList.add("d-none");
 }
+
 let listaGrupos = document.querySelector("#lista-grupos");
 let login = document.querySelector("#login");
 let chat = document.querySelector("#chat");
@@ -45,6 +47,7 @@ function montarGrupo(grupo){
     div.addEventListener('click', ()=>{
         carregarMensagens(div.id);
         idGrupoAtual = div.id;
+        formMsg.classList.remove("d-none");
     })
 
     divInterna.appendChild(span);
