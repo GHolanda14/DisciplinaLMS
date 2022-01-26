@@ -20,9 +20,10 @@ window.onload = () => {
 }
 
 /*Login escondendo modal*/
-btnLogin.addEventListener('click',()=>{
+btnLogin.addEventListener('click',(event)=>{
+    event.preventDefault();
     nomeUsuario = document.querySelector("#login-usuario").value;
-    if(usuario != ""){
+    if(nomeUsuario != ""){
         let usuario = document.getElementById("usuario");
         usuario.innerText = nomeUsuario;
         myModal.hide();
